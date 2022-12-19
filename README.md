@@ -38,14 +38,15 @@ The **app** should:
 
 ## Design
 
-- A monthly, weekly and daily view. (inspo-1)
+- A monthly, weekly and daily view. (assets/inspo/inspo-1)
 - Subtle colors:
   - Purple: rgba(174,156,214)
   - Pink: rgba(225, 138, 170)
   - Grey: rgba(156,171,212)
   - Green: rgba(183, 233, 193)
   - Blue: rgba( 167, 199, 231)
+  * Dark: rgba( 49,69,69)
 
-* Sidebar menu + icon menu in header (inspo-2 & inspo-3)
-* "Cards"-view (inspo-2 & inspo-4)
-* Subtle patterns in background (inspo-4 & inspo-5)
+* Sidebar menu + icon menu in header (assets/inspo/inspo-2 & assets/inspo/inspo-3)
+* "Cards"-view (assets/inspo/inspo-2 & assets/inspo/inspo-4)
+* Subtle patterns in background (assets/inspo/inspo-4 & assets/inspo/inspo-5)
