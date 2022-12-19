@@ -1,0 +1,40 @@
+/* Colors */
+
+$red: rgba(255, 105, 97);
+$black: rgba(29, 28, 26);
+$white: rgba(250, 248, 246);
+$pink: rgba(225, 138, 170);
+$purple: rgba(174, 156, 214);
+$grey: rgba(156, 171, 212);
+$green: rgba(183, 233, 193);
+$blue: rgba(167, 199, 231);
+
+/* Fonts */
+
+// headers
+@font-face {
+  font-family: "ubuntu-thin";
+  src: url(/assets/fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+  font-family: "ubuntu-regular";
+  src: url(/assets/fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: "ubuntu-bold";
+  src: url(/assets/fonts/Ubuntu-Bold.ttf);
+}
+
+// text
+@font-face {
+  font-family: "poppins-thin";
+  src: url(/assets/fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "poppins-regular";
+  src: url(/assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "poppins-bold";
+  src: url(/assets/fonts/Poppins-Bold.ttf);
+}
