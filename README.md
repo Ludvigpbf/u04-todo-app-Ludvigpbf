@@ -50,3 +50,17 @@ The **app** should:
 * Sidebar menu + icon menu in header (assets/inspo/inspo-2 & assets/inspo/inspo-3)
 * "Cards"-view (assets/inspo/inspo-2 & assets/inspo/inspo-4)
 * Subtle patterns in background (assets/inspo/inspo-4 & assets/inspo/inspo-5)
+
+<!-- About the languages -->
+
+## YML
+
+.yml file is a file for ..
+
+## PHP
+
+## MySQL
+
+## Adminer
+
+##
