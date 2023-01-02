@@ -1,8 +1,10 @@
 <?php
+
+
 include 'db-conn.php';
 
 $stmt = $pdo->query('SELECT title, task FROM tasks');
-
+$stmt = $pdo->query('SELECT id FROM tasks');
 
 ?>
 <!DOCTYPE html>
@@ -20,14 +22,12 @@ $stmt = $pdo->query('SELECT title, task FROM tasks');
 
 <body>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
-    <h1 class="heading1">Task Manager</h1>
     <section id="task-list">
-        <div id="select-all"><input type="checkbox" name="select-all"><p>Select all</p><h1>Tasks</h1></div>
         <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
         <div id="task-field"><div class="taskbox">
             <input type="checkbox" name="status" id="checked">
-            <div class="task-content">
-                <a href="edit.php"><?php echo $row['title'];?></a>
+            <div class="task-content" href="edit.php">
+                <h3><?php echo $row['title'];?></h3>
                 <p><?php echo $row['task'];?></p>
             </div> 
         </div>

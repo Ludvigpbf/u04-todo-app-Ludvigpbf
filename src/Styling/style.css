@@ -39,24 +39,29 @@ body header {
   margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+body .heading1 {
+  font-family: "ubuntu-bold";
+  width: 20rem;
+  text-align: center;
+  font-size: 3rem;
 }
 body #new-task {
   display: flex;
   justify-content: center;
   margin: 2rem;
   width: 20rem;
-  height: 20rem;
+  height: 15rem;
   background-color: white;
   border-radius: 2rem;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
 }
 body #new-task form {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 10rem;
 }
 body #new-task form .heading {
   font-family: "poppins-bold";
@@ -72,38 +77,178 @@ body #new-task form .task-text {
   width: 15rem;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
 }
-body #new-task form #ad-picture {
+body #new-task form #txt-content {
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  resize: none;
+  font-size: 1rem;
+  font-family: "poppins-regular";
+  border-width: 0.1rem;
+  border-style: solid;
+  width: 15rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+}
+body #new-task form #buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+body #new-task form #buttons #ad-picture {
   margin-top: 1rem;
   cursor: pointer;
   font-family: "poppins-regular";
+  font-size: 0.8rem;
   border: 2px solid rgb(49, 51, 53);
+  height: 1.5em;
   text-align: center;
   background-color: rgb(183, 233, 193);
-  width: 8rem;
+  width: 6rem;
   border-radius: 2rem;
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
 }
-body #new-task form #ad-picture #img[type=file] {
-  display: none;
-}
-body #buttons #add-task-btn {
-  border-radius: 1rem;
-  width: 6.5rem;
-  height: 2rem;
-  margin: 0.5rem;
-  border-style: solid;
-  border-color: rgb(49, 51, 53);
-  background-color: rgb(183, 233, 193);
-  font-size: 1rem;
-  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
-  transition: all 0.1s;
-  cursor: pointer;
-}
-body #buttons #add-task-btn:hover {
+body #new-task form #buttons #ad-picture:hover {
   background-color: rgb(167, 199, 231);
 }
-body #buttons #add-task-btn:active {
-  font-size: 0.9rem;
+body #new-task form #buttons #ad-picture:active {
+  font-size: 0.7rem;
+}
+body #new-task form #buttons #ad-picture #img[type=file] {
+  display: none;
+}
+body #new-task form #buttons #ad-btn {
+  margin-top: 1rem;
+  cursor: pointer;
+  font-family: "poppins-regular";
+  font-size: 0.8rem;
+  border: 2px solid rgb(49, 51, 53);
+  text-align: center;
+  background-color: rgb(183, 233, 193);
+  width: 6rem;
+  height: 1.8em;
+  border-radius: 2rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+}
+body #new-task form #buttons #ad-btn:hover {
+  background-color: rgb(167, 199, 231);
+}
+body #new-task form #buttons #ad-btn:active {
+  font-size: 0.7rem;
+}
+body .message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+body .message p {
+  font-family: "poppins-regular";
+  font-size: 1rem;
+}
+body #task-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  font-family: "poppins-regular";
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+body #task-list #select-all {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin-left: 1.5rem;
+  align-items: center;
+}
+body #task-list #select-all p {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+}
+body #task-list #select-all h1 {
+  margin-left: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+body #task-list #task-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+  border-radius: 1rem;
+  padding: 0.2rem;
+  margin: 0.3rem;
+}
+body #task-list #task-field .taskbox {
+  margin: 0.5rem;
+  display: flex;
+  width: 70%;
+  height: 3rem;
+  flex-direction: row;
+  border: solid 0.1rem rgb(49, 69, 69);
+  border-radius: 1rem;
+}
+body #task-list #task-field .taskbox #checked {
+  align-items: center;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+body #task-list #task-field .taskbox .task-content {
+  display: flex;
+  flex-direction: column;
+}
+body #task-list #task-field .taskbox .task-content a {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  font-size: 0.85rem;
+  align-self: flex-start;
+  color: black;
+  font-family: "poppins-bold";
+}
+body #task-list #task-field .taskbox .task-content a:hover {
+  color: rgb(156, 171, 212);
+}
+body #task-list #task-field .taskbox .task-content p {
+  font-size: 0.7rem;
+}
+body #task-list #task-field #buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 0.75rem;
+  justify-content: center;
+}
+body #task-list #task-field #buttons a {
+  text-decoration: none;
+  color: black;
+  border: solid black 0.1rem;
+  border-radius: 0.3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 2.5rem;
+  text-align: center;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+  margin: 0.1rem;
+}
+body #task-list #task-field #buttons #edit {
+  background-color: rgb(167, 199, 231);
+}
+body #task-list #task-field #buttons #edit:hover {
+  background-color: rgb(156, 171, 212);
+}
+body #task-list #task-field #buttons #delete {
+  background-color: rgb(255, 105, 97);
+}
+body #task-list #task-field #buttons #delete:hover {
+  background-color: rgb(202, 82, 75);
 }
 body footer {
   display: flex;
@@ -121,6 +266,12 @@ body footer #links {
   align-items: center;
   justify-content: space-between;
   width: 90vw;
+}
+body footer #links a {
+  transition: all 0.1s ease-in-out;
+}
+body footer #links a:hover {
+  transform: scale(1.1);
 }
 body footer button {
   position: fixed;
@@ -141,4 +292,8 @@ body footer button:hover {
 }
 body footer button:active {
   font-size: 30px;
+}
+body footer button a {
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=style.css.map */

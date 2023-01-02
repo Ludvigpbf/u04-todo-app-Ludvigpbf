@@ -12,24 +12,29 @@ body {
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
   }
-
+  .heading1 {
+    font-family: "ubuntu-bold";
+    width: 20rem;
+    text-align: center;
+    font-size: 3rem;
+  }
   #new-task {
     display: flex;
     justify-content: center;
     margin: 2rem;
     width: 20rem;
-    height: 20rem;
+    height: 15rem;
     background-color: white;
     border-radius: 2rem;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
     form {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       display: flex;
       align-items: center;
       flex-direction: column;
-      height: 10rem;
+
       .heading {
         font-family: "poppins-bold";
       }
@@ -44,40 +49,179 @@ body {
         width: 15rem;
         box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
       }
-      #ad-picture {
-        margin-top: 1rem;
-        cursor: pointer;
+      #txt-content {
+        margin: 0.5rem;
+        border-radius: 0.3rem;
+        resize: none;
+        font-size: 1rem;
         font-family: "poppins-regular";
-        border: 2px solid $dark-grey;
-        text-align: center;
-        background-color: $green;
-        width: 8rem;
-        border-radius: 2rem;
+        border-width: 0.1rem;
+        border-style: solid;
+        width: 15rem;
         box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
-        #img[type="file"] {
-          display: none;
+      }
+      #buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        width: 100%;
+        #ad-picture {
+          margin-top: 1rem;
+          cursor: pointer;
+          font-family: "poppins-regular";
+          font-size: 0.8rem;
+          border: 2px solid $dark-grey;
+          height: 1.5em;
+          text-align: center;
+          background-color: $green;
+          width: 6rem;
+          border-radius: 2rem;
+          box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+          &:hover {
+            background-color: $blue;
+          }
+          &:active {
+            font-size: 0.7rem;
+          }
+          #img[type="file"] {
+            display: none;
+          }
+        }
+        #ad-btn {
+          margin-top: 1rem;
+          cursor: pointer;
+          font-family: "poppins-regular";
+          font-size: 0.8rem;
+          border: 2px solid $dark-grey;
+          text-align: center;
+          background-color: $green;
+          width: 6rem;
+          height: 1.8em;
+          border-radius: 2rem;
+          box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+          &:hover {
+            background-color: $blue;
+          }
+          &:active {
+            font-size: 0.7rem;
+          }
         }
       }
     }
   }
-  #buttons {
-    #add-task-btn {
-      border-radius: 1rem;
-      width: 6.5rem;
-      height: 2rem;
-      margin: 0.5rem;
-      border-style: solid;
-      border-color: $dark-grey;
-      background-color: $green;
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+    border-radius: 1rem;
+    padding: 1rem;
+    p {
+      font-family: "poppins-regular";
       font-size: 1rem;
-      box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
-      transition: all 0.1s;
-      cursor: pointer;
-      &:hover {
-        background-color: $blue;
+    }
+  }
+  #task-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+    font-family: "poppins-regular";
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    #select-all {
+      display: flex;
+      flex-direction: row;
+      align-self: flex-start;
+      margin-left: 1.5rem;
+      align-items: center;
+      p {
+        font-size: 0.7rem;
+        margin-left: 0.5rem;
       }
-      &:active {
-        font-size: 0.9rem;
+      h1 {
+        margin-left: 2rem;
+        text-decoration: underline;
+        text-underline-offset: 0.2rem;
+      }
+    }
+    #task-field {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 90%;
+      box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+      border-radius: 1rem;
+      padding: 0.2rem;
+      margin: 0.3rem;
+      .taskbox {
+        margin: 0.5rem;
+        display: flex;
+        width: 70%;
+        height: 3rem;
+        flex-direction: row;
+        border: solid 0.1rem $dark;
+        border-radius: 1rem;
+        #checked {
+          align-items: center;
+          margin: 0.5rem;
+          cursor: pointer;
+        }
+        .task-content {
+          display: flex;
+          flex-direction: column;
+          a {
+            text-decoration: underline;
+            text-underline-offset: 0.2rem;
+            font-size: 0.85rem;
+            align-self: flex-start;
+            color: black;
+            font-family: "poppins-bold";
+            &:hover {
+              color: $light-grey;
+            }
+          }
+          p {
+            font-size: 0.7rem;
+          }
+        }
+      }
+      #buttons {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-size: 0.75rem;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: black;
+          border: solid black 0.1rem;
+          border-radius: 0.3rem;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          width: 2.5rem;
+          text-align: center;
+          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+          margin: 0.1rem;
+        }
+        #edit {
+          background-color: $blue;
+          &:hover {
+            background-color: $light-grey;
+          }
+        }
+        #delete {
+          background-color: $red;
+          &:hover {
+            background-color: $red-hover;
+          }
+        }
       }
     }
   }
@@ -96,6 +240,12 @@ body {
       align-items: center;
       justify-content: space-between;
       width: 90vw;
+      a {
+        transition: all 0.1s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
     button {
       position: fixed;
@@ -115,6 +265,10 @@ body {
       }
       &:active {
         font-size: 30px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
       }
     }
   }
