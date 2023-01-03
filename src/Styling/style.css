@@ -143,7 +143,7 @@ body .message {
   border-radius: 1rem;
   padding: 1rem;
 }
-body .message p {
+body .message .mess {
   font-family: "poppins-regular";
   font-size: 1rem;
 }
@@ -216,8 +216,11 @@ body #task-list #task-field .taskbox .task-content a {
 body #task-list #task-field .taskbox .task-content a:hover {
   color: rgb(156, 171, 212);
 }
-body #task-list #task-field .taskbox .task-content p {
+body #task-list #task-field .taskbox .task-content #taskEcho {
   font-size: 0.7rem;
+}
+body #task-list #task-field .taskbox .task-content #hidden {
+  display: none;
 }
 body #task-list #task-field #buttons {
   display: flex;

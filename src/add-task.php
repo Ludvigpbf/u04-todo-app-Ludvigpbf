@@ -4,7 +4,7 @@ include 'db-conn.php';
 
 $messages = [
     "success" => "Task added!",
-    "failed" => "Please fill in all empty spaces!",
+    "failed" => "All fields must be filled in!",
 ];
 
 ?>
