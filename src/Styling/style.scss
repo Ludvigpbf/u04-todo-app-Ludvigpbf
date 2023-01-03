@@ -110,6 +110,9 @@ body {
       }
     }
   }
+  #hidden {
+    visibility: none;
+  }
   .message {
     display: flex;
     align-items: center;
@@ -117,7 +120,7 @@ body {
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
     border-radius: 1rem;
     padding: 1rem;
-    p {
+    .mess {
       font-family: "poppins-regular";
       font-size: 1rem;
     }

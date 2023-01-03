@@ -1,43 +1,11 @@
 <?php
  
-/* include 'db-conn.php'; */
-$dbhost = "db";
-$dbname ="todo";
-$username = "root";
-$password = "example";
-$charset = 'utf8mb4';
-
-
-$dsn = "mysql:host=$dbhost;dbname=$dbname;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    $pdo = new PDO($dsn, $username, $password, $options);
-    echo "Connection established!";
-} catch(\PDOException $e){
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
-}
+include 'db-conn.php';
 
 $messages = [
     "success" => "Task added!",
-    "failed" => "<br>Something went wrong,<br> Please try again.",
+    "failed" => "Please fill in all empty spaces!",
 ];
-
-
-if(isset($_POST['submit'])){
-    $title = ($_POST['title']);
-    $task = ($_POST['task']);
-
-    $sql = "INSERT INTO tasks (title, task) VALUES ($title, $task)";
-    $stmt= $pdo->prepare($sql);
-    $stmt->execute($sql);
-    echo $messages['success'];
-}else{
-    echo $messages['failed'];
 
 ?>
 
@@ -59,14 +27,24 @@ if(isset($_POST['submit'])){
     <section id="new-task">
         <form id="task_form" method="POST" action="add-task.php">
         <label class="heading" for="title">Title</label>
-        <input name="title" id="taskTitle" class="task-text" type="text" placeholder="Title" maxlength="30" autocomplete="off"/><!-- count down letters -->
+        <input name="title" id="taskTitle" class="task-text" type="text" placeholder="Add a title" maxlength="30" autocomplete="off"/><!-- count down letters -->
         <label class="heading" for="task">Add task</label>
         <textarea name="task" id="txt-content" cols="10" rows="2" placeholder="What do you need to do?" maxlength="150"></textarea>
         <div id="buttons"><label id="ad-picture" for="img">+ Add image<input type="file" id="img" name="img" accept="image/*"></label>
         <button id="ad-btn" type="submit">+ Add task</button></div>
     </form>
 </section>
-<div class="message"><p id="mess"></p></div><?php }?>
+<?php if(!empty($_POST['title']) && !empty($_POST['task'])){
+    $title = $_POST['title'];
+    $task = $_POST['task'];
+    
+    $sql = "INSERT INTO tasks(title, task) VALUES ('$title', '$task')";
+    
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute();
+?><div class="message"><p class="mess"><?php echo $messages['success'];
+}else{
+    ?></p></div><div id="hidden"><p class="mess"><?php echo $messages['failed'];}?></p></div>
     <footer>
         <div id="links">
         <a href="index.php">
@@ -76,7 +54,7 @@ if(isset($_POST['submit'])){
         <a href="#"><img src="../assets/images/mdi_user.png" alt="Profile"></a>
         <a href="#"><img src="../assets/images/ph_trash-bold.png" alt="Deleted"></a></div>
     
-        <button type="button">+</button>
+        <button title="Add a new task"type="button">+</button>
         
     </footer>
 </body>

@@ -16,7 +16,6 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $username, $password, $options);
-    echo "Connection established!";
 } catch(\PDOException $e){
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
