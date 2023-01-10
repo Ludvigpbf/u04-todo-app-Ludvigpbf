@@ -285,21 +285,26 @@ body footer button {
   width: 4rem;
   height: 4rem;
   bottom: 1rem;
+  color: white;
   font-size: 40px;
   border-style: solid;
   border-color: rgb(49, 51, 53);
   box-shadow: 0rem 0rem 0rem 0.2rem white;
-  background-color: rgb(183, 233, 193);
+  background-color: rgb(49, 69, 69);
   transition: all 0.1s;
   cursor: pointer;
 }
 body footer button:hover {
-  background-color: rgb(167, 199, 231);
+  background-color: rgb(183, 233, 193);
+  color: black;
+}
+body footer button:hover a {
+  color: black;
 }
 body footer button:active {
   font-size: 30px;
 }
 body footer button a {
   text-decoration: none;
-  color: black;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

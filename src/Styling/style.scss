@@ -259,22 +259,27 @@ body {
       width: 4rem;
       height: 4rem;
       bottom: 1rem;
+      color: white;
       font-size: 40px;
       border-style: solid;
       border-color: $dark-grey;
       box-shadow: 0rem 0rem 0rem 0.2rem white;
-      background-color: $green;
+      background-color: $dark;
       transition: all 0.1s;
       cursor: pointer;
       &:hover {
-        background-color: $blue;
+        background-color: $green;
+        color: black;
+        a {
+          color: black;
+        }
       }
       &:active {
         font-size: 30px;
       }
       a {
         text-decoration: none;
-        color: black;
+        color: white;
       }
     }
   }
