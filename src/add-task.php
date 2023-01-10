@@ -43,7 +43,7 @@ $messages = [
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
 ?><div class="message"><p class="mess"><?php echo $messages['success'];
-}else{
+}else{ /* if empty do this */
     ?></p></div><div id="hidden"><p class="mess"><?php echo $messages['failed'];}?></p></div>
     <footer>
         <div id="links">

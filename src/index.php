@@ -1,7 +1,22 @@
 <?php
 include 'db-conn.php';
-include 'delete.php';
+
+
 $stmt = $pdo->query('SELECT id, title, task FROM tasks');
+
+
+if(isset($_GET['select-all'])){
+    $selectAll=$_GET['select-all'];
+
+    $sql = "SELECT * FROM 'tasks'";
+    $sel = $pdo->prepare($sql);
+    $sel->execute();
+    if($sel){
+        echo "All selected";
+    }else{
+        echo "Hmm.. it didnt work..";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -20,10 +35,10 @@ $stmt = $pdo->query('SELECT id, title, task FROM tasks');
 <body>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <h1 class="heading1">Task Manager</h1>
+    <?php include 'delete.php'; ?>
     <section id="task-list">
-        <div id="select-all"><input type="checkbox" name="select-all"><p>Select all</p><h1>Tasks</h1></div>
-        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-            $id=$row['id'];?> 
+        <div id="select-all"><input type="checkbox" name="select-all" value="all-selected"><p>Select all</p><h1>Tasks</h1><a href="index.php">Refresh</a></div>
+        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
         <div id="task-field"><div class="taskbox">
             <input type="checkbox" name="status" id="checked">
             <div class="task-content">
@@ -34,7 +49,7 @@ $stmt = $pdo->query('SELECT id, title, task FROM tasks');
         </div>
             <div id="buttons">
                 <a id="edit" href="edit.php?edit-task=<?php echo $row['id'];?>">Edit</a> 
-                <a id="delete" href="index.php?delete-task=<?php echo $row['id'];?>">Delete</a>
+                <a id="delete" href="index.php?delete-task=<?php echo $row['id'];?>">Delete</a> <!-- Do this on select-all!!! -->
             </div>
         </div>
         <?php }?>
