@@ -1,3 +1,4 @@
+
 <?php
 include 'db-conn.php';
 $messages = [
@@ -22,6 +23,7 @@ $messages = [
 </head>
 
 <body>
+<a class="previous" href="javascript:history.back()"><img src="..\assets\images\Vector.png" alt=""><span>Previous</span></a>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <?php
     if(isset($_GET['edit-task'])){/* Här är ID't som står i url'en */

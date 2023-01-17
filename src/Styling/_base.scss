@@ -1,18 +1,22 @@
 /* Colors */
 
 $red: rgba(255, 105, 97);
-$red-hover: rgb(202, 82, 75);
+$redHover: rgb(252, 142, 137);
 $black: rgba(29, 28, 26);
-$white: rgba(250, 248, 246);
+$white: rgb(239, 237, 236);
 $pink: rgba(225, 138, 170);
 $purple: rgba(174, 156, 214);
 $light-grey: rgba(156, 171, 212);
 $dark-grey: rgba(49, 51, 53);
 $green: rgba(183, 233, 193);
+$greenHover: rgb(211, 255, 220);
 $blue: rgba(167, 199, 231);
+$blueHover: rgb(203, 221, 239);
 $dark: rgba(49, 69, 69);
 $dark2: rgb(111, 135, 135);
 $dark3: rgb(127, 154, 154);
+$orange: (rgb(255, 170, 65));
+$orangeHover: (rgb(255, 198, 128));
 
 /* Fonts */
 
@@ -42,4 +46,40 @@ $dark3: rgb(127, 154, 154);
 @font-face {
   font-family: "poppins-bold";
   src: url(/assets/fonts/Poppins-Bold.ttf);
+}
+
+@mixin desktop {
+  @media screen and (min-width: 500px) {
+    @content;
+  }
+}
+
+.previous {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  color: black;
+  text-decoration: none;
+  border: 2px solid $dark-grey;
+  border-radius: 2rem;
+  width: 6rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  text-align: center;
+  font-family: "poppins-bold";
+  font-size: 0.8rem;
+  &:active {
+    border: 2px solid grey;
+  }
+  img {
+    margin-right: auto;
+  }
+  span {
+    margin-right: auto;
+  }
 }

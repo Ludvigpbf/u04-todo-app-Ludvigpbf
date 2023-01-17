@@ -1,22 +1,7 @@
 <?php
 include 'db-conn.php';
-
-
-$stmt = $pdo->query('SELECT id, title, task FROM tasks');
-
-
-if(isset($_GET['select-all'])){
-    $selectAll=$_GET['select-all'];
-
-    $sql = "SELECT * FROM 'tasks'";
-    $sel = $pdo->prepare($sql);
-    $sel->execute();
-    if($sel){
-        echo "All selected";
-    }else{
-        echo "Hmm.. it didnt work..";
-    }
-}
+include 'status.php';
+$stmt = $pdo->query('SELECT id, title, task, done FROM tasks');
 
 ?>
 <!DOCTYPE html>
@@ -37,16 +22,26 @@ if(isset($_GET['select-all'])){
     <h1 class="heading1">Task Manager</h1>
     <?php include 'delete.php'; ?>
     <section id="task-list">
-        <div id="select-all"><input type="checkbox" name="select-all" value="all-selected"><p>Select all</p><h1>Tasks</h1><a href="index.php">Refresh</a></div>
-        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
-        <div id="task-field"><div class="taskbox">
-            <input type="checkbox" name="status" id="checked">
-            <div class="task-content">
-                <p id="hidden"><?php echo $row['id'];?></p>
-                <a href="edit.php"><?php echo $row['title'];?></a>
-                <p id="taskEcho"><?php echo $row['task'];?></p>
-            </div> 
+        <div id="card-header"> 
+            <div id="select-all">
+                <input type="checkbox" name="select-all" value="all-selected">
+                <p>Select all</p>
+            </div>
+            <h1>Tasks</h1>
+            <a href="index.php">Refresh</a>
         </div>
+        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
+        <div id="task-field">
+            <div class="taskbox">
+                <form action="index.php?statusCheck=<?php echo $row['id'];?>" method="post">            
+                    <button type="submit" class="statusBtn" id="<? if(isset($_POST['status']) && $_POST['status'] == 0){echo "done";}else if (isset($_POST['status']) && $_POST['status'] == 1){echo "not-done";} ?>" name="status" value="<? echo $row['done'];?>">Done</button>
+                </form> 
+                <div class="task-content">
+                    <p id="hidden"><?php echo $row['id'];?></p>
+                    <a href="view.php?view-task=<?php echo $row['id'];?>"><?php echo $row['title'];?></a>
+                    <p id="taskEcho"><?php echo $row['task'];?></p>
+                </div> 
+            </div>
             <div id="buttons">
                 <a id="edit" href="edit.php?edit-task=<?php echo $row['id'];?>">Edit</a> 
                 <a id="delete" href="index.php?delete-task=<?php echo $row['id'];?>">Delete</a> <!-- Do this on select-all!!! -->

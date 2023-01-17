@@ -1,0 +1,98 @@
+@import "_base";
+
+.task-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+
+  border: solid 0.1rem black;
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  font-family: "poppins-regular";
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  .task-view {
+    display: flex;
+    flex-direction: column;
+    border: dashed 0.1rem rgb(0, 0, 0);
+    border-radius: 1rem;
+    padding: 0.3rem;
+    #hidden {
+      display: none;
+    }
+    h3 {
+      font-family: "poppins-bold";
+      align-self: center;
+      font-size: 1.5rem;
+      text-decoration: underline;
+      text-underline-offset: 0.1rem;
+      padding: 0.5rem 1rem 0 1rem;
+    }
+    p {
+      border: solid 0.1rem black;
+      border-radius: 1rem;
+      margin: 0.5rem;
+      padding: 1rem;
+    }
+  }
+  .task-img {
+    width: 15rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    img {
+      display: flex;
+      max-width: 10rem;
+    }
+  }
+  .operations {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    a {
+      margin: 0.2rem;
+      padding: 0.2rem;
+      color: black;
+      text-decoration: none;
+      border: 2px solid $dark-grey;
+      border-radius: 2rem;
+      width: 6rem;
+      box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+      text-align: center;
+      font-family: "poppins-bold";
+      font-size: 0.8rem;
+      &:active {
+        border: 2px solid grey;
+      }
+    }
+    #edit {
+      background-color: $blue;
+      &:hover {
+        background-color: $blueHover;
+      }
+    }
+    #delete {
+      background-color: $red;
+      &:hover {
+        background-color: $redHover;
+      }
+    }
+    #copy {
+      background-color: $orange;
+      &:hover {
+        background-color: $orangeHover;
+      }
+    }
+    #done {
+      background-color: $green;
+      &:hover {
+        background-color: $greenHover;
+      }
+    }
+  }
+}

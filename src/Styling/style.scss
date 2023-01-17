@@ -1,4 +1,6 @@
 @import "_base";
+@import "_view";
+
 * {
   margin: 0px;
 }
@@ -64,7 +66,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-around;
-
         width: 100%;
         #ad-picture {
           margin-top: 1rem;
@@ -74,7 +75,7 @@ body {
           border: 2px solid $dark-grey;
           height: 1.5em;
           text-align: center;
-          background-color: $white;
+
           width: 6rem;
           border-radius: 2rem;
           box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
@@ -100,6 +101,7 @@ body {
           height: 1.8em;
           border-radius: 2rem;
           box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+          padding: 0;
           &:hover {
             background-color: $green;
           }
@@ -138,18 +140,29 @@ body {
     padding-bottom: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 6rem;
-    #select-all {
+    @include desktop {
+      min-width: 30rem;
+    }
+    #card-header {
       display: flex;
       flex-direction: row;
-      align-self: flex-start;
-      margin-left: 1.5rem;
       align-items: center;
-      p {
-        font-size: 0.7rem;
-        margin-left: 0.5rem;
+      justify-content: space-between;
+      width: 90%;
+      margin: 1rem;
+      #select-all {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover p {
+          text-shadow: green 1px 0 10px;
+        }
+        p {
+          font-size: 0.7rem;
+          margin-left: 0.5rem;
+        }
       }
       h1 {
-        margin-left: 2rem;
         text-decoration: underline;
         text-underline-offset: 0.2rem;
       }
@@ -163,6 +176,9 @@ body {
       border-radius: 1rem;
       padding: 0.2rem;
       margin: 0.3rem;
+      &:hover {
+        background-color: $white;
+      }
       .taskbox {
         margin: 0.5rem;
         display: flex;
@@ -171,14 +187,75 @@ body {
         flex-direction: row;
         border: solid 0.1rem $dark;
         border-radius: 1rem;
-        #checked {
+        form {
+          display: flex;
           align-items: center;
-          margin: 0.5rem;
-          cursor: pointer;
+          justify-content: center;
+          .statusBtn {
+            font-family: "poppins-regular";
+            border: 0.1rem grey solid;
+            border-radius: 1rem;
+            margin: 0.5rem;
+            color: rgba(128, 128, 128, 0.446);
+            cursor: pointer;
+            &:hover {
+              border-color: black;
+              color: rgb(128, 128, 128);
+            }
+            &:active {
+              border: 0.1rem solid black;
+            }
+            &:checked {
+              background-color: green;
+            }
+          }
+          #not-done {
+            font-family: "poppins-regular";
+            border: 0.1rem grey solid;
+            border-radius: 1rem;
+            margin: 0.5rem;
+            color: rgba(128, 128, 128, 0.446);
+            cursor: pointer;
+            background-color: red;
+            &:hover {
+              border-color: black;
+              color: rgb(128, 128, 128);
+            }
+            &:active {
+              border: 0.1rem solid black;
+            }
+            &:checked {
+              background-color: green;
+            }
+          }
+          #done {
+            font-family: "poppins-regular";
+            border: 0.1rem grey solid;
+            border-radius: 1rem;
+            margin: 0.5rem;
+            color: rgba(128, 128, 128, 0.446);
+            cursor: pointer;
+            background-color: green;
+            &:hover {
+              border-color: black;
+              color: rgb(128, 128, 128);
+            }
+            &:active {
+              border: 0.1rem solid black;
+            }
+            &:checked {
+              background-color: green;
+            }
+          }
         }
         .task-content {
           display: flex;
           flex-direction: column;
+          max-height: 2.5rem;
+          max-width: 9rem;
+          @include desktop {
+            min-width: 15rem;
+          }
           a {
             text-decoration: underline;
             text-underline-offset: 0.2rem;
@@ -192,6 +269,9 @@ body {
           }
           #taskEcho {
             font-size: 0.7rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
           }
           #hidden {
             display: none;
@@ -225,7 +305,7 @@ body {
         #delete {
           background-color: $red;
           &:hover {
-            background-color: $red-hover;
+            background-color: $redHover;
           }
         }
       }

@@ -23,6 +23,7 @@ $messages = [
 </head>
 
 <body>
+<a class="previous" href="javascript:history.back()"><img src="..\assets\images\Vector.png" alt=""><span>Previous</span></a>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <section id="new-task">
         <form id="task_form" method="POST" action="add-task.php">
@@ -34,11 +35,12 @@ $messages = [
         <button id="ad-btn" type="submit">+ Add task</button></div>
     </form>
 </section>
-<?php if(!empty($_POST['title']) && !empty($_POST['task'])){
+<?php if(!empty($_POST['title']) && !empty($_POST['task']) && !empty($_POST['img'])){
     $title = $_POST['title'];
     $task = $_POST['task'];
+    $picture = $_POST['img'];
     
-    $sql = "INSERT INTO tasks(title, task) VALUES ('$title', '$task')";
+    $sql = "INSERT INTO tasks(title, task, picture) VALUES ('$title', '$task', '$picture')";
     
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
@@ -58,5 +60,4 @@ $messages = [
         
     </footer>
 </body>
-
 </html>
