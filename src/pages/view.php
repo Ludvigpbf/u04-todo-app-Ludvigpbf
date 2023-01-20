@@ -1,7 +1,7 @@
 <?php
 include 'db-conn.php';
 
-$stmt = $pdo->query('SELECT id, title, task FROM tasks');
+$stmt = $pdo->query('SELECT id, title, task, picture, done, class FROM tasks');
 
 
 
@@ -23,16 +23,16 @@ $stmt = $pdo->query('SELECT id, title, task FROM tasks');
 <body>
     <a class="previous" href="javascript:history.back()"><img src="..\assets\images\Vector.png" alt=""><span>Previous</span></a>
 <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
-<?php if(isset($_GET['view-task'])){/* Här är ID't som står i url'en */
+<?php if(isset($_GET['view-task'])){
         $id=$_GET['view-task'];
-        $sql = "SELECT id, title, task, picture FROM tasks WHERE id=$id";
+        $sql = "SELECT id, title, task, picture, done, class FROM tasks WHERE id=$id";
         $run = $pdo->prepare($sql);
         $run->execute();
         if($run){
             while ($row = $run->fetch(PDO::FETCH_ASSOC)){ ?>
 <section class="task-card">
     <div class="task-view">
-        <p id="hidden"><?php echo $row['id'];?></p>
+        <p class="hidden"><?php echo $row['id'];?></p>
         <h3>"<?php echo $row['title'];?>"</h3>
         <p><?php echo $row['task'];?></p>
     </div>
@@ -40,10 +40,12 @@ $stmt = $pdo->query('SELECT id, title, task FROM tasks');
         <img src="<?php echo $row['picture'];?>" alt="task-image">
     </div>
     <div class="operations">
-        <a id="edit" href="edit.php?edit-task=<?php echo $row['id'];?>">Edit</a>
-        <a id="delete" href="index.php?delete-task=<?php echo $row['id'];?>">Delete</a>
-        <a id="copy" href="index.php?copy-task=<?php echo $row['id'];?>">Copy</a>
-        <a id="done" href="">Done</a>
+        <a class="edit" href="edit.php?edit-task=<?php echo $row['id'];?>">Edit</a>
+        <a class="delete" href="index.php?delete-task=<?php echo $row['id'];?>">Delete</a>
+        <a class="copy" href="index.php?copy-task=<?php echo $row['id'];?>">Copy</a>
+        <form action="index.php?statusCheck=<?php echo $row['id'];?>" method="post">            
+                    <button type="submit" class="<?php echo $row['class'];?>"  name="status" value="<? echo $row['done'];?>">Done</button>
+                </form> 
 </section>
 
 

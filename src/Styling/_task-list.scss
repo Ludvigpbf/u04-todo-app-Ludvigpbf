@@ -1,0 +1,268 @@
+.task-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+    font-family: "poppins-regular";
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+
+    @include desktop {
+        min-width: 30rem;
+    }
+
+    .card-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 1rem;
+
+        .select-all {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover p {
+                text-shadow: green 1px 0 10px;
+            }
+
+            p {
+                font-size: 0.7rem;
+                margin-left: 0.5rem;
+            }
+        }
+
+        h1 {
+            text-decoration: underline;
+            text-underline-offset: 0.2rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(147, 145, 145);
+
+            }
+        }
+    }
+
+    .selectOperations {
+        display: flex;
+        align-items: flex-start;
+
+        .notDone {
+            font-family: "poppins-regular";
+            border: 0.1rem grey solid;
+            border-radius: 1rem;
+            margin: 0.5rem;
+            color: rgba(128, 128, 128, 0.446);
+            cursor: pointer;
+
+            &:hover {
+                border-color: black;
+                color: rgb(128, 128, 128);
+            }
+
+            &:active {
+                border: 0.1rem solid black;
+            }
+        }
+
+        .done {
+            font-family: "poppins-regular";
+            border: 0.1rem rgb(76, 238, 0) solid;
+            border-radius: 1rem;
+            margin: 0.5rem;
+            color: rgb(0, 0, 0);
+            background-color: $green;
+            cursor: pointer;
+
+            &:hover {
+                border-color: black;
+                color: rgb(128, 128, 128);
+            }
+
+            &:active {
+                border: 0.1rem solid black;
+            }
+
+        }
+    }
+
+    .task-field {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 90%;
+        box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+        border-radius: 1rem;
+        padding: 0.2rem;
+        margin: 0.3rem;
+
+        &:hover {
+            background-color: $white;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.2rem;
+
+        }
+
+        .taskbox {
+            margin: 0.5rem;
+            display: flex;
+            width: 70%;
+            height: 3rem;
+            flex-direction: row;
+            border: solid 0.1rem $dark;
+            border-radius: 1rem;
+
+
+
+            form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .notDone {
+                    font-family: "poppins-regular";
+                    border: 0.1rem grey solid;
+                    border-radius: 1rem;
+                    margin: 0.5rem;
+                    color: rgba(128, 128, 128, 0.446);
+                    cursor: pointer;
+
+                    &:hover {
+                        border-color: black;
+                        color: rgb(128, 128, 128);
+                    }
+
+                    &:active {
+                        border: 0.1rem solid black;
+                    }
+                }
+
+                .done {
+                    font-family: "poppins-regular";
+                    border: 0.1rem rgb(76, 238, 0) solid;
+                    border-radius: 1rem;
+                    margin: 0.5rem;
+                    color: rgb(0, 0, 0);
+                    background-color: $green;
+                    cursor: pointer;
+
+                    &:hover {
+                        border-color: black;
+                        color: rgb(128, 128, 128);
+                    }
+
+                    &:active {
+                        border: 0.1rem solid black;
+                    }
+                }
+            }
+
+            .task-content {
+                display: flex;
+                flex-direction: column;
+                max-height: 2.5rem;
+                max-width: 9rem;
+
+                @include desktop {
+                    min-width: 15rem;
+                }
+
+                a {
+                    text-decoration: underline;
+                    text-underline-offset: 0.2rem;
+                    font-size: 0.85rem;
+                    align-self: flex-start;
+                    color: black;
+                    font-family: "poppins-bold";
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    max-width: 5rem;
+
+                    @include desktop {
+                        max-width: 10rem;
+                    }
+
+                    &:hover {
+                        color: $light-grey;
+                    }
+                }
+
+                .taskEcho {
+                    font-size: 0.7rem;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    max-width: 7rem;
+
+                    @include desktop {
+                        max-width: 14rem;
+                    }
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-size: 0.75rem;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+                color: black;
+                border: solid black 0.1rem;
+                border-radius: 0.3rem;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                width: 2.5rem;
+                text-align: center;
+                box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.352);
+                margin: 0.1rem;
+            }
+
+            .edit {
+                background-color: $blue;
+
+                &:hover {
+                    background-color: $light-grey;
+                }
+            }
+
+            .delete {
+                background-color: $red;
+
+                &:hover {
+                    background-color: $redHover;
+                }
+            }
+
+            .copy {
+                background-color: $orange;
+
+                &:hover {
+                    background-color: $orangeHover;
+                }
+            }
+        }
+    }
+}

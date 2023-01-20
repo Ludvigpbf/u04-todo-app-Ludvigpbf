@@ -1,0 +1,60 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: fixed;
+    bottom: -1px;
+    height: 3rem;
+    background-color: $dark;
+    border-radius: 15px 15px 0px 0px;
+
+    #links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90vw;
+
+        a {
+            transition: all 0.1s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    button {
+        position: fixed;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        bottom: 1rem;
+        color: white;
+        font-size: 40px;
+        border-style: solid;
+        border-color: $dark-grey;
+        box-shadow: 0rem 0rem 0rem 0.2rem white;
+        background-color: $dark;
+        transition: all 0.1s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $green;
+            color: black;
+
+            a {
+                color: black;
+            }
+        }
+
+        &:active {
+            font-size: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
