@@ -655,66 +655,60 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 90%;
   margin: 1rem;
-}
-.task-list .card-header .select-all {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.task-list .card-header .select-all:hover p {
-  text-shadow: green 1px 0 10px;
-}
-.task-list .card-header .select-all p {
-  font-size: 0.7rem;
-  margin-left: 0.5rem;
 }
 .task-list .card-header h1 {
   text-decoration: underline;
   text-underline-offset: 0.2rem;
 }
-.task-list .card-header a {
-  color: black;
-  text-decoration: none;
-}
-.task-list .card-header a:hover {
-  color: rgb(147, 145, 145);
-}
 .task-list .selectOperations {
   display: flex;
-  align-items: flex-start;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
 }
-.task-list .selectOperations .notDone {
-  font-family: "poppins-regular";
-  border: 0.1rem grey solid;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  color: rgba(128, 128, 128, 0.446);
-  cursor: pointer;
+.task-list .selectOperations .allDoneForm .allDone {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  color: black;
+  text-decoration: none;
+  border: 2px solid rgb(49, 51, 53);
+  border-radius: 2rem;
+  width: 10rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  text-align: center;
+  font-family: "poppins-bold";
+  font-size: 0.8rem;
+  background-color: rgb(183, 233, 193);
 }
-.task-list .selectOperations .notDone:hover {
+.task-list .selectOperations .allDoneForm .allDone:hover {
   border-color: black;
   color: rgb(128, 128, 128);
+  background-color: rgb(211, 255, 220);
 }
-.task-list .selectOperations .notDone:active {
+.task-list .selectOperations .allDoneForm .allDone:active {
   border: 0.1rem solid black;
 }
-.task-list .selectOperations .done {
-  font-family: "poppins-regular";
-  border: 0.1rem rgb(76, 238, 0) solid;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  color: rgb(0, 0, 0);
-  background-color: rgb(183, 233, 193);
-  cursor: pointer;
+.task-list .selectOperations .deleteAllForm .allDelete {
+  margin: 0.2rem;
+  padding: 0.2rem;
+  color: black;
+  text-decoration: none;
+  border: 2px solid rgb(49, 51, 53);
+  border-radius: 2rem;
+  width: 10rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+  text-align: center;
+  font-family: "poppins-bold";
+  font-size: 0.8rem;
+  background-color: rgb(255, 105, 97);
 }
-.task-list .selectOperations .done:hover {
-  border-color: black;
-  color: rgb(128, 128, 128);
+.task-list .selectOperations .deleteAllForm .allDelete:hover {
+  background-color: rgb(252, 142, 137);
 }
-.task-list .selectOperations .done:active {
+.task-list .selectOperations .deleteAllForm .allDelete:active {
   border: 0.1rem solid black;
 }
 .task-list .task-field {
@@ -730,12 +724,6 @@ header {
 .task-list .task-field:hover {
   background-color: rgb(239, 237, 236);
 }
-.task-list .task-field .checkbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.2rem;
-}
 .task-list .task-field .taskbox {
   margin: 0.5rem;
   display: flex;
@@ -745,12 +733,12 @@ header {
   border: solid 0.1rem rgb(49, 69, 69);
   border-radius: 1rem;
 }
-.task-list .task-field .taskbox form {
+.task-list .task-field .taskbox .statusForm {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.task-list .task-field .taskbox form .notDone {
+.task-list .task-field .taskbox .statusForm .notDone {
   font-family: "poppins-regular";
   border: 0.1rem grey solid;
   border-radius: 1rem;
@@ -758,14 +746,14 @@ header {
   color: rgba(128, 128, 128, 0.446);
   cursor: pointer;
 }
-.task-list .task-field .taskbox form .notDone:hover {
+.task-list .task-field .taskbox .statusForm .notDone:hover {
   border-color: black;
   color: rgb(128, 128, 128);
 }
-.task-list .task-field .taskbox form .notDone:active {
+.task-list .task-field .taskbox .statusForm .notDone:active {
   border: 0.1rem solid black;
 }
-.task-list .task-field .taskbox form .done {
+.task-list .task-field .taskbox .statusForm .done {
   font-family: "poppins-regular";
   border: 0.1rem rgb(76, 238, 0) solid;
   border-radius: 1rem;
@@ -774,11 +762,11 @@ header {
   background-color: rgb(183, 233, 193);
   cursor: pointer;
 }
-.task-list .task-field .taskbox form .done:hover {
+.task-list .task-field .taskbox .statusForm .done:hover {
   border-color: black;
   color: rgb(128, 128, 128);
 }
-.task-list .task-field .taskbox form .done:active {
+.task-list .task-field .taskbox .statusForm .done:active {
   border: 0.1rem solid black;
 }
 .task-list .task-field .taskbox .task-content {

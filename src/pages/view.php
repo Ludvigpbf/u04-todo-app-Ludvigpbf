@@ -1,5 +1,5 @@
 <?php
-include 'db-conn.php';
+include '../functions/db-conn.php';
 
 $stmt = $pdo->query('SELECT id, title, task, picture, done, class FROM tasks');
 

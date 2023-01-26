@@ -10,7 +10,11 @@ if(isset($_POST['status']) && $_POST['status'] == 0)
     $sql = "UPDATE tasks SET done='$done', class='$stsBtnDone' WHERE id='$id'";
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
-    
+    if($stmt){
+        echo '<div class="message"><p class="mess">Task done</p></div>';
+    }else{
+        echo "Hmm.. it didnt work..";
+    }
     } 
 else if (isset($_POST['status']) && $_POST['status'] == 1)
 {
@@ -21,6 +25,11 @@ else if (isset($_POST['status']) && $_POST['status'] == 1)
     
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
+    if($stmt){
+        echo '<div class="message"><p class="mess">Task not done</p></div>';
+    }else{
+        echo "Hmm.. it didnt work..";
+    }
     }
 
 ?>
