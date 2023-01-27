@@ -80,5 +80,4 @@ include '../functions/darkMode.php';
     </footer>
 </body>
 <? } ?>
-<script type="text/javascript" src="js/app.js"></script>
 </html>
