@@ -789,7 +789,7 @@ header {
   background-color: rgb(239, 237, 236);
 }
 .task-list .task-field:hover {
-  background-color: rgb(239, 237, 236);
+  background-color: rgb(127, 154, 154);
 }
 .task-list .task-field .taskbox {
   margin: 0.5rem;
@@ -995,6 +995,33 @@ footer .add a {
   color: white;
 }
 
+#infoTxt {
+  font-family: "poppins-regular";
+  width: 20rem;
+  margin-top: 5rem;
+}
+
+#start {
+  text-decoration: none;
+  color: black;
+  font-family: "poppins-bold";
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: rgb(183, 233, 193);
+  margin-top: 5rem;
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+}
+#start:hover {
+  color: rgb(70, 70, 70);
+  border: 2px solid rgb(42, 42, 42);
+  background-color: rgb(211, 255, 220);
+}
+#start:active {
+  color: rgb(118, 118, 118);
+  border: 2px solid rgb(113, 113, 113);
+}
+
 body {
   display: flex;
   align-items: center;
@@ -1087,6 +1114,9 @@ body .message-dark .mess {
 }
 .dark-mode .task-list .task-field {
   background-color: rgb(117, 117, 117);
+}
+.dark-mode .task-list .task-field:hover {
+  background-color: rgb(161, 161, 161);
 }
 .dark-mode .task-list .task-field .taskbox .statusForm .notDone {
   background-color: rgb(80, 80, 80);

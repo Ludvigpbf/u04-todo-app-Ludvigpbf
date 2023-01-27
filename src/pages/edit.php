@@ -41,7 +41,7 @@ if(isset($_POST['update'])){
         $stmtClass = $pdo->query('SELECT id, class FROM darkmode');
         while ($class = $stmtClass->fetch(PDO::FETCH_ASSOC)){?> 
 <body class="<?php echo $class['class'];?>">
-<a class="previous" href="../index.php"><img src="..\assets\images\Vector.png" alt=""><span>Start</span></a>
+<a class="previous" href="./list.php"><img src="..\assets\images\Vector.png" alt=""><span>The list</span></a>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <?php
     if(isset($_GET['edit-task'])){
@@ -73,9 +73,9 @@ if(isset($_POST['update'])){
     
     <footer>
         <div id="links">
-            <a href="../index.php">
+            <a href="./list.php">
             <img class="icons" src="../assets/images/gg_list.png" alt="List">
-            </a><form action="../index.php?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
+            </a><form action="./list.php?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
                     <button type="submit" class="darkMode" name="darkMode" value="<? echo $class['id'];?>">Dark Mode</button>
                 </form>
         </div> 

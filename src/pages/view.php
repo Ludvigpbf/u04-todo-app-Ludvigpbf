@@ -26,7 +26,7 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
         $stmtClass = $pdo->query('SELECT id, class FROM darkmode');
         while ($class = $stmtClass->fetch(PDO::FETCH_ASSOC)){?> 
 <body class="<?php echo $class['class'];?>">
-    <a class="previous" href="../index.php"><img src="..\assets\images\Vector.png" alt=""><span>Start</span></a>
+    <a class="previous" href="./list.php"><img src="..\assets\images\Vector.png" alt=""><span>The list</span></a>
 <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
 <?php if(isset($_GET['view-task'])){
         $id=$_GET['view-task'];
@@ -43,9 +43,9 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
     </div>
     <div class="operations">
         <a class="edit" href="edit.php?edit-task=<?php echo $row['id'];?>">Edit</a>
-        <a class="delete" href="../index.php?delete-task=<?php echo $row['id'];?>">Delete</a>
-        <a class="copy" href="../index.php?copy-task=<?php echo $row['id'];?>">Copy</a>
-        <form action="../index.php?statusCheck=<?php echo $row['id'];?>" method="post">            
+        <a class="delete" href="./list.php?delete-task=<?php echo $row['id'];?>">Delete</a>
+        <a class="copy" href="./list.php?copy-task=<?php echo $row['id'];?>">Copy</a>
+        <form action="./list.php?statusCheck=<?php echo $row['id'];?>" method="post">            
                     <button type="submit" class="<?php echo $row['class'];?>"  name="status" value="<? echo $row['done'];?>">Done</button>
                 </form> 
 </section>
@@ -58,9 +58,9 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
 
 <footer>
         <div id="links">
-            <a href="../index.php">
+            <a href="./list.php">
             <img class="icons" src="../assets/images/gg_list.png" alt="List">
-            </a><form action="../index.php?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
+            </a><form action="./list.php?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
                     <button type="submit" class="darkMode" name="darkMode" value="<? echo $class['id'];?>">Dark Mode</button>
                 </form>
         </div> 

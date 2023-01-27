@@ -4,6 +4,7 @@
 @import "_header";
 @import "_task-list";
 @import "_footer";
+@import "_start";
 
 body {
   display: flex;
@@ -107,6 +108,10 @@ body {
 
     .task-field {
       background-color: rgb(117, 117, 117);
+
+      &:hover {
+        background-color: rgb(161, 161, 161);
+      }
 
       .taskbox {
         .statusForm {

@@ -1,11 +1,5 @@
 <?php
 include 'functions/db-conn.php';
-include 'functions/copy.php';
-include 'functions/delete.php';
-include 'functions/status.php';
-include 'functions/markAllDone.php';
-include 'functions/DeleteDoneTasks.php';
-include 'functions/unMarkAll.php';
 include 'functions/darkMode.php';
 
 
@@ -28,48 +22,12 @@ include 'functions/darkMode.php';
 <body class="<?php echo $class['class'];?>">
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <h1 class="heading1">Task Manager</h1>
-    <section class="task-list">
-        <div class="card-header"> 
-            <h1>Tasks</h1>
-        </div>
-        <div class="selectOperations"><form action="<?echo $_SERVER["PHP_SELF"]?>" class="allDoneForm" method="post">          
-                    <button type="submit" class="allDone" name="markAllDone">Mark all as done</button>
-                </form> 
-                <form action="<?echo $_SERVER["PHP_SELF"]?>" class="deleteAllForm" method="post">          
-                    <button type="submit" class="allDelete" name="delete-all-done">Delete all done tasks</button>
-                </form>
-                <form action="<?echo $_SERVER["PHP_SELF"]?>" class="unMarkAllForm" method="post">          
-                    <button type="submit" class="unMarkAll" name="unMarkAll">Unmark all tasks</button>
-                </form> 
-        </div>
-        <?php
-        $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
-            
-        <div class="task-field">
-            <div class="taskbox">
-                <form action="../index.php?statusCheck=<?php echo $row['id'];?>" class="statusForm" method="post">            
-                    <button type="submit" class="<?php echo $row['class'];?>" name="status" value="<? echo $row['done'];?>">Done</button>
-                </form> 
-                <div class="task-content">
-                    <p class="hidden"><?php echo $row['id'];?></p>
-                    <a href="pages/view.php?view-task=<?php echo $row['id'];?>"><?php echo $row['title'];?></a>
-                    <p class="taskEcho"><?php echo $row['task'];?></p>
-                </div> 
-            </div>
-            <div class="buttons">
-                <a class="edit" href="pages/edit.php?edit-task=<?php echo $row['id'];?>">Edit</a> 
-                <a class="delete" href="<?echo $_SERVER["PHP_SELF"]?>?delete-task=<?php echo $row['id'];?>">Delete</a> <!-- Do this on select-all!!! -->
-                <a class="copy" href="<?echo $_SERVER["PHP_SELF"]?>?copy-task=<?php echo $row['id'];?>">Copy</a>
-            </div>
-        </div>
-        <?php }?>
-        
-    </section>
-    
+    <p id="infoTxt">This is a to do app where you can enter and save your various tasks that need to be remembered. Press the button to get started!</p>
+    <a id="start" href="pages/add-task.php">Get started</a>
+
     <footer>
         <div id="links">
-            <a href="../index.php">
+            <a href="../pages/list.php">
             <img class="icons" src="../assets/images/gg_list.png" alt="List">
             </a><form action="<?echo $_SERVER["PHP_SELF"]?>?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
                     <button onclick="colorMode(colorToggle)" type="submit" class="darkMode" name="darkMode" value="<? echo $class['id'];?>">Dark Mode</button>
