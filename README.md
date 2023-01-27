@@ -1,5 +1,17 @@
 # u04-todo-app-Ludvigpbf
 
+## Vad är det?
+
+Det här är en app där man kan lägga till uppgifter som ska göras. Man kan skapa, läsa, uppdatera och radera uppgifter. Det går även att kopiera uppgifter samt byta färgtema i appen.
+
+För att sätta igång appen skriver man in:
+localhost:8080
+där man skriver in användarnamnet och lösenordet som finns i docker-compose.yml filen. Återskapa sedan databasen genom att skriva in i sql, kommandona som finns i db.sql filen.
+
+Gå sedan till sidan: localhost/index.php.
+
+Nu är det bara att tuta och köra. Börja lägga in uppgifter och markera dom som färdiga när dom är gjorda.
+
 ## What functions do i need?
 
 Each **task** must have:
@@ -29,7 +41,6 @@ The **app** should:
 
 ## Design
 
-- A monthly, weekly and daily view. (assets/inspo/inspo-1)
 - Subtle colors:
   - Purple: rgba(174,156,214)
   - Pink: rgba(225, 138, 170)
@@ -38,6 +49,4 @@ The **app** should:
   - Blue: rgba( 167, 199, 231)
   * Dark: rgba( 49,69,69)
 
-* Sidebar menu + icon menu in header (assets/inspo/inspo-2 & assets/inspo/inspo-3)
 * "Cards"-view (assets/inspo/inspo-2 & assets/inspo/inspo-4)
-* Subtle patterns in background (assets/inspo/inspo-4 & assets/inspo/inspo-5)
