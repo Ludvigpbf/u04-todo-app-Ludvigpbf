@@ -7,7 +7,7 @@ if(isset($_GET['delete-task'])){
     $run = $pdo->prepare($sql);
     $run->execute();
     if($run){
-        echo '<div class="message"><p class="mess">Task Deleted</p></div>';
+        echo '<div class="message-red"><p class="mess">Task Deleted</p></div>';
     }else{
         echo "Hmm.. it didnt work..";
     }

@@ -10,9 +10,9 @@ if(isset($_POST['delete-all-done']))
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
     if($stmt){
-        echo '<div class="message"><p class="mess">Tasks Deleted</p></div>';
+        echo '<div class="message-red"><p class="mess">Tasks Deleted</p></div>';
     }else{
-        echo "Hmm.. it didnt work..";
+        echo '<div class="message-red"><p class="mess">No tasks selected</p></div>';
     }
     }
 

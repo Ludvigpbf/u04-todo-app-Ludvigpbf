@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 20rem;
-    background-color: white;
+
     border-radius: 2rem;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
     font-family: "poppins-regular";
@@ -28,13 +28,14 @@
         h1 {
             text-decoration: underline;
             text-underline-offset: 0.2rem;
+
         }
 
     }
 
     .selectOperations {
         display: flex;
-
+        flex-wrap: wrap;
         width: 90%;
         align-items: center;
         justify-content: center;
@@ -83,6 +84,34 @@
 
                 &:hover {
                     background-color: $redHover;
+                    color: rgb(128, 128, 128);
+                }
+
+                &:active {
+                    border: 0.1rem solid black;
+                }
+            }
+        }
+
+        .unMarkAllForm {
+            .unMarkAll {
+                margin: 0.2rem;
+                padding: 0.2rem;
+                color: black;
+                text-decoration: none;
+                border: 2px solid $dark-grey;
+                border-radius: 2rem;
+                width: 10rem;
+                box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.352);
+                text-align: center;
+                font-family: "poppins-bold";
+                font-size: 0.8rem;
+                background-color: rgb(154, 192, 237);
+
+                &:hover {
+                    border-color: black;
+                    color: rgb(128, 128, 128);
+                    background-color: rgb(203, 220, 242);
                 }
 
                 &:active {
@@ -91,6 +120,7 @@
             }
         }
     }
+
 
     .task-field {
         display: flex;
@@ -101,6 +131,7 @@
         border-radius: 1rem;
         padding: 0.2rem;
         margin: 0.3rem;
+        background-color: $white;
 
         &:hover {
             background-color: $white;
@@ -116,7 +147,7 @@
             flex-direction: row;
             border: solid 0.1rem $dark;
             border-radius: 1rem;
-
+            color: black;
 
 
             .statusForm {

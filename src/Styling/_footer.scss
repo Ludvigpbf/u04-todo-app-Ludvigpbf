@@ -13,6 +13,11 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include desktop {
+            justify-content: space-evenly;
+        }
+
         width: 90vw;
 
         a {
@@ -22,9 +27,33 @@ footer {
                 transform: scale(1.1);
             }
         }
+
+        .darkMode {
+            display: flex;
+            background-color: $dark-grey;
+            border: 3px solid white;
+            border-radius: 0.3rem;
+            background-color: $dark;
+            color: white;
+            font-family: "poppins-regular";
+            height: 2rem;
+            font-size: 1rem;
+
+            &:hover {
+                color: rgb(155, 155, 155);
+                border-color: rgb(155, 155, 155);
+            }
+
+            &:active {
+                color: rgb(181, 179, 179);
+                border-color: rgb(191, 188, 188);
+            }
+        }
+
     }
 
-    button {
+
+    .add {
         position: fixed;
         border-radius: 50%;
         width: 4rem;

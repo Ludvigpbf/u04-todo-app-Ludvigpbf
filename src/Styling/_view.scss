@@ -5,7 +5,6 @@
   flex-direction: column;
   align-items: center;
   width: 20rem;
-
   border: solid 0.1rem black;
   border-radius: 1rem;
   margin: 1rem;
@@ -19,6 +18,8 @@
     border: dashed 0.1rem rgb(0, 0, 0);
     border-radius: 1rem;
     padding: 0.3rem;
+    background-color: $white;
+    color: black;
 
     .hidden {
       display: none;

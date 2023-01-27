@@ -70,7 +70,12 @@ $orangeHover: (
 .previous {
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 0.3rem;
+
+  @include desktop {
+    left: 1rem;
+  }
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -86,6 +91,12 @@ $orangeHover: (
   text-align: center;
   font-family: "poppins-bold";
   font-size: 0.8rem;
+  background-color: $white;
+
+  &:hover {
+    border: 2px solid grey;
+    color: grey;
+  }
 
   &:active {
     border: 2px solid grey;

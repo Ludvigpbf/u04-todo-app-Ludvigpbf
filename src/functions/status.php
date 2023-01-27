@@ -26,7 +26,7 @@ else if (isset($_POST['status']) && $_POST['status'] == 1)
     $stmt=$pdo->prepare($sql);
     $stmt->execute();
     if($stmt){
-        echo '<div class="message"><p class="mess">Task not done</p></div>';
+        echo '<div class="message-undone"><p class="mess">Task not done</p></div>';
     }else{
         echo "Hmm.. it didnt work..";
     }

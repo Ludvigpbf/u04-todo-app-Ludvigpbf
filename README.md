@@ -16,8 +16,7 @@ The **user** should be able to:
 3. Change a task
 4. Delete a task
 5. Mark a task as complete
-6. Take away done tasks
-7. Mark all tasks
+6. Mark all tasks
 
 The **app** should:
 
@@ -25,16 +24,8 @@ The **app** should:
 
 "Nice to have"-functions:
 
-1. Time and date on the tasks
-2. Notifications
-3. A login form
-4. Share tasks
-5. Change languages
-6. Change color-theme
-7. Calendar
-8. Tags
-9. Upload profile picture
-10. Subtasks
+1. Change color-theme
+2. Copy tasks
 
 ## Design
 
@@ -50,17 +41,3 @@ The **app** should:
 * Sidebar menu + icon menu in header (assets/inspo/inspo-2 & assets/inspo/inspo-3)
 * "Cards"-view (assets/inspo/inspo-2 & assets/inspo/inspo-4)
 * Subtle patterns in background (assets/inspo/inspo-4 & assets/inspo/inspo-5)
-
-<!-- About the languages -->
-
-## YML
-
-.yml file is a file for ..
-
-## PHP
-
-## MySQL
-
-## Adminer
-
-##

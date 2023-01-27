@@ -1,8 +1,8 @@
-let checkBox = document.getElementsByClassName("checkbox");
-
-function select() {
-  checkBox.addEventListener();
-  if (checkBox.checked) {
-    console.log("hello");
+function colorMode() {
+  let colorToggle = document.getElementsByClassName("darkMode");
+  if (colorToggle.innerText == "Dark Mode") {
+    colorToggle.innerText = "Light Mode";
+  } else {
+    colorToggle.innerText = "Dark Mode";
   }
 }

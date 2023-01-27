@@ -1,6 +1,7 @@
 
 <?php
 include '../functions/db-conn.php';
+
 $messages = [
     "success" => "Task updated!",
     "failed" => "All fields must be filled in!",
@@ -36,8 +37,11 @@ if(isset($_POST['update'])){
     <title>Task Manager</title>
 </head>
 
-<body>
-<a class="previous" href="javascript:history.back()"><img src="..\assets\images\Vector.png" alt=""><span>Previous</span></a>
+<?php
+        $stmtClass = $pdo->query('SELECT id, class FROM darkmode');
+        while ($class = $stmtClass->fetch(PDO::FETCH_ASSOC)){?> 
+<body class="<?php echo $class['class'];?>">
+<a class="previous" href="../index.php"><img src="..\assets\images\Vector.png" alt=""><span>Start</span></a>
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <?php
     if(isset($_GET['edit-task'])){
@@ -55,7 +59,7 @@ if(isset($_POST['update'])){
         <input name="title" class="task-text" type="text" maxlength="30" autocomplete="off" value="<?php echo $row['title'];?>"/><!-- count down letters -->
         <label class="heading" for="task">Update task</label>
         <textarea name="task" class="txt-content" cols="10" rows="5" maxlength="150"><?php echo $row['task'];?></textarea>
-        <div class="buttons"><label class="ad-picture" for="img">Update image<input type="file" class="img" name="img" accept="image/*"></label>
+        <div class="buttons">
         <button class="ad-btn" type="submit" name="update">Update task</button></div>
     </form>
     
@@ -66,18 +70,17 @@ if(isset($_POST['update'])){
  } 
  
 ?>
+    
     <footer>
         <div id="links">
-        <a href="../index.php">
-        <img src="../assets/images/gg_list.png" alt="List">
-        </a>
-        <a href="#"><img src="../assets/images/mdi_settings-outline.png" alt="Settings"></a>
-        <a href="#"><img src="../assets/images/mdi_user.png" alt="Profile"></a>
-        <a href="#"><img src="../assets/images/ph_trash-bold.png" alt="Deleted"></a></div>
-    
-        <button title="Add a new task"type="button"><a href="add-task.php">+</button>
-        
+            <a href="../index.php">
+            <img class="icons" src="../assets/images/gg_list.png" alt="List">
+            </a><form action="../index.php?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
+                    <button type="submit" class="darkMode" name="darkMode" value="<? echo $class['id'];?>">Dark Mode</button>
+                </form>
+        </div> 
+        <button class="add" type="button"><a href="./add-task.php">+</button>
     </footer>
 </body>
-
+<? }?>
 </html>

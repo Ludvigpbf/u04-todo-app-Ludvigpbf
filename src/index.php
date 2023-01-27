@@ -5,8 +5,10 @@ include 'functions/delete.php';
 include 'functions/status.php';
 include 'functions/markAllDone.php';
 include 'functions/DeleteDoneTasks.php';
+include 'functions/unMarkAll.php';
+include 'functions/darkMode.php';
 
-$stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,8 +22,10 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
     <link rel="icon" href="../assets/images/TM-logo.png" type="iamge/x-icon">
     <title>Task Manager</title>
 </head>
-
-<body>
+<?php
+        $stmtClass = $pdo->query('SELECT id, class FROM darkmode');
+        while ($class = $stmtClass->fetch(PDO::FETCH_ASSOC)){?> 
+<body class="<?php echo $class['class'];?>">
     <header><img src="../assets/images/TM-logo.png" alt="TM logo"></header>
     <h1 class="heading1">Task Manager</h1>
     <section class="task-list">
@@ -29,13 +33,18 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
             <h1>Tasks</h1>
         </div>
         <div class="selectOperations"><form action="<?echo $_SERVER["PHP_SELF"]?>" class="allDoneForm" method="post">          
-                    <button type="submit" class="allDone" name="select-all">Mark all as done</button>
+                    <button type="submit" class="allDone" name="markAllDone">Mark all as done</button>
                 </form> 
                 <form action="<?echo $_SERVER["PHP_SELF"]?>" class="deleteAllForm" method="post">          
                     <button type="submit" class="allDelete" name="delete-all-done">Delete all done tasks</button>
+                </form>
+                <form action="<?echo $_SERVER["PHP_SELF"]?>" class="unMarkAllForm" method="post">          
+                    <button type="submit" class="unMarkAll" name="unMarkAll">Unmark all tasks</button>
                 </form> 
         </div>
-        <?php while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
+        <?php
+        $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){?> 
             
         <div class="task-field">
             <div class="taskbox">
@@ -57,18 +66,18 @@ $stmt = $pdo->query('SELECT id, title, task, done, class FROM tasks');
         <?php }?>
         
     </section>
+    
     <footer>
         <div id="links">
-            <a href="index.php">
+            <a href="../index.php">
             <img class="icons" src="../assets/images/gg_list.png" alt="List">
-            </a>
-            <a href="#"><img class="icons" src="../assets/images/mdi_settings-outline.png" alt="Settings"></a>
-            <a href="#"><img class="icons" src="../assets/images/mdi_user.png" alt="Profile"></a>
-            <a href="#"><img class="icons" src="../assets/images/ph_trash-bold.png" alt="Deleted"></a>
-        </div>
-        <button type="button"><a href="pages/add-task.php">+</button>
+            </a><form action="<?echo $_SERVER["PHP_SELF"]?>?darkMode=<?php echo $class['id'];?>" class="darkModeForm" method="post">            
+                    <button onclick="colorMode(colorToggle)" type="submit" class="darkMode" name="darkMode" value="<? echo $class['id'];?>">Dark Mode</button>
+                </form>
+        </div> 
+        <button class="add" type="button"><a href="pages/add-task.php">+</button>
     </footer>
 </body>
-<script type="text/javascript" src="../js/app.js">
-</script>
+<? } ?>
+<script type="text/javascript" src="js/app.js"></script>
 </html>
