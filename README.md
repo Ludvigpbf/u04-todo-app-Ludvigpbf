@@ -1,16 +1,18 @@
 # u04-todo-app-Ludvigpbf
 
-## Vad är det?
+## What is it?
 
-Det här är en app där man kan lägga till uppgifter som ska göras. Man kan skapa, läsa, uppdatera och radera uppgifter. Det går även att kopiera uppgifter samt byta färgtema i appen.
+This is an app where you can add tasks to be done. You can create, read, update and delete information. It is also possible to copy data and change the color theme in the app.
 
-För att sätta igång appen skriver man in:
-localhost:8080
-där man skriver in användarnamnet och lösenordet som finns i docker-compose.yml filen. Återskapa sedan databasen genom att skriva in i sql, kommandona som finns i db.sql filen.
+## Getting Started
 
-Gå sedan till sidan: localhost/index.php.
-
-Nu är det bara att tuta och köra. Börja lägga in uppgifter och markera dom som färdiga när dom är gjorda.
+1. Clone the repo from github to your computer.
+2. Then create a devcontainer by opening the folder with the project in VS code.
+3. Go into the terminal in VS code and type `docker-compose up`
+4. Recreate the database using the username and password found in the
+   docker-compose. yml file and then run the sql commands found in the _db.sql_ file.
+5. Then go to the _localhost/index.php_ page in the browser.
+6. Now you are good to go. Start entering tasks and mark them as complete when they are done.
 
 ## What functions do i need?
 
